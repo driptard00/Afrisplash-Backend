@@ -202,11 +202,11 @@ This Contain the content or body of a blog
 <!--Reason
     Since the front end is using a WYSIWYG package
     image, video and other assest would / might be converted to a 64 bit 
-    So it would make a row appromixate greater than < 5mb if not correctly optimized 
+    So it would make a row appromixate greater than > 5mb if not correctly optimized 
    -->
 
 | Attribute       | Type        
 | ------------- |:-------------:| 
 | _ID | PRIMARY_KEY table(SELF)|
 | _post | FOREIGN_KEY table(post) |
-| Message     | String - Require - True|
+| Message     | String - Require - False|
