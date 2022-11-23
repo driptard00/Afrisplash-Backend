@@ -193,6 +193,7 @@ This Table Manages Of A Post Single Chainning
 | Replies | Array[Object] |
 | Likes | Number  |
 | Created | Date  |
+| user | Object |
 
 
 
