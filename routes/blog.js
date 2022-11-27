@@ -2,7 +2,13 @@ const express = require("express");
 const router = express.Router();
 const { protect } = require("../middleware/auth");
 const {
-    SampleCode
+    SampleCode,
+    postNewComment,
+    postNewReply,
+    deleteComment,
+    getAllComments,
+    editComment,
+    deleteReply
 } = require("../controllers/blog")
 
 router.get("/test", SampleCode);
@@ -15,11 +21,13 @@ router.get("/test", SampleCode);
 // router.delete("/post/delete/:id", SampleCode);
 // router.edit("/post/edit/:id", SampleCode);
 
-// router.get("/comment/:postid", SampleCode);
-// router.put("/comment/create/:postid", SampleCode);
-// router.put("/comment/edit/:id", SampleCode); // Comment can only be deleted so might be depercated  
-// router.delete("/comment/delete/:id", SampleCode);
-// router.post("/comment/reply/:id", SampleCode);
+router.get("/comment/:postid", getAllComments);
+router.post("/comment/create/:postid", postNewComment);
+router.put("/comment/edit/:id", editComment); // Comment can only be deleted so might be depercated  
+router.delete("/comment/delete/:id", deleteComment);
+router.delete("/comment/reply/delete/:id", deleteReply);
+router.post("/comment/reply/:id", postNewReply);
+
 
 // router.post("/leading/create/", SampleCode);
 // router.put("/leading/edit/", SampleCode);
